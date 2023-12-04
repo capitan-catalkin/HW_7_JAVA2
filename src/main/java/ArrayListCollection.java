@@ -2,27 +2,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayListCollection {
-    public static void main(String[] args) {
-       List<String> array = new ArrayList<>();
-        array.add("1");
-        array.add("2");
-        array.add("3");
 
-        System.out.println(array);
+    List<String> list = new ArrayList<>();
 
-        array.set(0, "0");
-        System.out.println(array.get(0));
-        System.out.println(array);
+    public void addList(String str) {
+        list.add(str);
+    }
 
-        array.remove(2);
-        System.out.println(array);
+    public void removeList(String str) {
+        list.remove(str);
+    }
 
-        array.add("4");
-        array.add("2");
-        array.add("6");
+    public void getList(int index) {
+        System.out.println(list.get(index));
+    }
 
-        for (int i = 0; i < array.size(); i++){
-            System.out.println("Number " + array.get(i));
+
+    public void checkRemoveElement(String str) {
+        if (list.contains(str) == false) {
+            System.out.println("Предмет удален: " + str);
+        } else {
+            System.out.println("Предмет не удалён: " + str);
         }
     }
 }

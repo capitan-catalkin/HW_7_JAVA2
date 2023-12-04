@@ -1,25 +1,34 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Iterator;
 
 public class MapCollection {
-    public static void main(String[] args) {
-        Map<String,Integer> book = new HashMap<>();
-        book.put("Война и мир", 3);
-        book.put("Горе от ума", 5);
-        book.put("Идиот", 2);
-        book.put("Морфий", 7);
+    Map<String, Integer> book = new HashMap<>();
 
-        System.out.println(book);
-
-        book.put("Морфий", 65);
-        System.out.println(book);
-
-        book.putIfAbsent("Морфий", 10);
-        System.out.println(book.get("Морфий"));
-
-        book.remove("Горе от ума");
-        System.out.println(book);
-
-        System.out.println(book.containsKey("Война и мир"));
+    public void addBook(String str, Integer i) {
+        book.put(str, i);
     }
+
+    public void deleteBook(String str) {
+        book.remove(str);
+    }
+
+    public void getBook(String str) {
+        System.out.println(book.get(str));
+    }
+
+    public boolean searchElement(String str) {
+        return book.containsKey(str);
+    }
+
+    public void listOfBooks() {
+        Iterator<Map.Entry<String, Integer>> iterator = book.entrySet().iterator();
+        do {
+            Map.Entry<String, Integer> entry = iterator.next();
+            String titleBooks = entry.getKey();
+            Integer quantityOfBooks = entry.getValue();
+            System.out.println("Название книги: " + titleBooks + ", Кол-во книг: " + quantityOfBooks);
+        } while (iterator.hasNext());
+    }
+
 }

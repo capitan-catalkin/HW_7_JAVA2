@@ -3,24 +3,23 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class QueueCollection {
-    public static void main(String[] args) {
-        Queue<String> fruit = new LinkedList<>();
-        fruit.add("apple");
-        fruit.add("pear");
-        fruit.add("orange");
-        fruit.add("lemon");
-        System.out.println(fruit);
 
+    Queue<String> fruit = new LinkedList<>();
+
+    public void addFruit(String str) {
+        fruit.add(str);
+    }
+
+    public void deleteFruit() {
         fruit.poll();
-        System.out.println(fruit);
+    }
 
-        System.out.println(fruit.element());
-
+    public void allFruit() {
         Iterator iterator = fruit.iterator();
         while (iterator.hasNext()) {
             String element = (String) iterator.next();
             System.out.println(element);
         }
-
     }
+
 }

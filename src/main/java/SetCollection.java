@@ -1,27 +1,24 @@
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+
 
 public class SetCollection {
-    public static void main(String[] args) {
-        Set<String> set = new HashSet<>();
-        set.add("Vasa");
-        set.add("Peta");
-        set.add("Vera");
-        set.add("Ekaterina");
-        System.out.println(set);
+    HashSet<String> setName = new HashSet<>();
 
-        set.remove("Vasa");
-        System.out.println(set.size());
+    public void addSet(String str) {
+        setName.add(str);
+    }
 
-        Iterator iterator = set.iterator();
-        while (iterator.hasNext()) {
-            String element = (String) iterator.next();
-            if (element.equals("Peta")) {
-                System.out.println(element + " ???");
-            } else {
-                System.out.println(element);
-            }
+    public void deleteSet(String str) {
+        setName.remove(str);
+    }
+
+    public boolean searchSet(String str) {
+        return setName.contains(str);
+    }
+
+    public void listSet() {
+        for (String element : setName) {
+            System.out.println(element);
         }
     }
 }
